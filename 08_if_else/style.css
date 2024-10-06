@@ -1,0 +1,76 @@
+.game-card {
+/*    height: 100vh; */
+
+    font-family: 'Open Sans', monospace;
+}
+
+.container {
+    position: static;
+    margin: 500px;
+    margin-top: 100px;
+    align-items: center;
+}
+
+.minValue, .maxValue {
+    border-width: 4px;
+    padding: 5px;
+    font-size: small;
+    color: #6534aa;
+    background-color: rgb(247, 237, 214); 
+}
+
+.gamemplay {
+    border-width: 4px;
+    padding: 5px;
+    font-size: small;
+    color: #6534aa;
+    background-color: rgb(69, 208, 74);
+}
+
+.main {
+    position: static;
+    margin: 30px;
+} 
+
+.text-centr {
+    position: static;
+    border-width: 4px;
+    margin: 30px;
+    margin-top: 100px;
+}
+
+.offset-md-4 {
+    position: static;
+    border-width: 4px;
+    margin: 30px;
+}
+
+.btn-info {
+    background-color: rgb(248, 209, 102);
+    color: #6534aa;
+}
+
+
+.btn-lg {
+    background-color: rgb(69, 208, 74);
+    color: #6534aa;
+}
+
+.card-header {
+    background-color: rgb(102, 216, 248);
+    color: #6534aa;
+}
+
+.btn-link, .btn-primary {
+    background-color: rgb(102, 216, 248);
+    color: #6534aa;
+}
+
+.card-body, .card-footer {
+    background-color: rgb(247, 237, 214); 
+}
+
+#answerField {
+    color: #6534aa;
+}
+
