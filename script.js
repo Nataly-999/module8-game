@@ -144,7 +144,7 @@ document.getElementById('btnOver').addEventListener('click', function (event) { 
 document.getElementById('btnLess').addEventListener('click', function (event) {  //Описание работы кнопки меньше
     event.preventDefault();
     if (gameRun){
-        if (parseInt(minValue.value) == parseInt(maxValue.value)) {
+        if ((parseInt(minValue.value) == parseInt(maxValue.value)) || (parseInt(minValue.value) == parseInt(answerNumber))) {
             const phraseRandom = Math.round(Math.random() * 3);
             if (phraseRandom === 0) {
                 answerPhrase  = `Вы загадали неправильное число!\n\u{1F914}`;
@@ -155,7 +155,7 @@ document.getElementById('btnLess').addEventListener('click', function (event) { 
             if (phraseRandom === 2) {
                 answerPhrase  = `Хмм а может всё таки оно?\n\u{1F620}`;
             } else
-            if (phraseRandom == 3) {
+            if (phraseRandom === 3) {
                 answerPhrase  = `Вы меня обманываете?\n\u{1F620}`;
             }
             answerField.innerText = answerPhrase;
@@ -176,10 +176,10 @@ document.getElementById('btnLess').addEventListener('click', function (event) { 
                 answerPhrase  = `Это число `;
             } else
             if (phraseRandom === 3) {
-            answerPhrase  = `Скорее всего это число `;
+                answerPhrase  = `Скорее всего это число `;
             } else
             if (phraseRandom === 4) {
-            answerPhrase  = `Я считаю, что это число `;
+                answerPhrase  = `Я считаю, что это число `;
             } 
             answerField.innerText = answerNumber >= 0 ? numberToWord().length < 20 && Math.abs(answerNumber) >= 0 ? `Вы загадали число ${numberToWord()}?` : `Вы загадали число ${answerNumber}?` : numberToWord().length < 20 ? `Вы загадали число минус ${numberToWord()}?` : `Вы загадали число ${answerNumber}?`; 
         }
