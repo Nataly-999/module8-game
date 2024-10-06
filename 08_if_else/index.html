@@ -5,26 +5,21 @@
     <title>Угадайка</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css"/>
-
+    <link rel="stylesheet" href="./style.css" type="text/css"/>
 </head>
+
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<div class="container">
-    <p class="text-warning">
+    <div class="container">
         <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Нажмите для запуска игры</button>
         <div id="demo" class="collapse">
             Введие минимальное (от -999) и максимальное (до 999) числа и Нажмите "Начать игру!"       
-             <!--<div class="row game-card align-items-center"> -->
             <div class="main">
                 <form id='ques' name='ques'>
                     <input type='text' class='minValue' name='minValue'  placeholder='Минимальное значение'>
                     <input type='text' class='maxValue' name='maxValue' placeholder='Максимальное значение'>
-                    <!--<button class='gamemplay' name='gamemplay'>Начать игру!</button>-->
                     <button type="button" class="gamemplay" data-toggle="collapse" data-target="#demo1">Начать игру!</button>
                     <div id="demo1" class="collapse">
                         <div class="col col-md-4 offset-md-4">
@@ -55,8 +50,12 @@
                 </form>
             </div>
         </div>
-    </p>
-</div>
-<script src="script.js"></script>
+    </div>
+    <script src="script.js"></script>
+
+<!--Нижняя часть с моими контактами-->
+<footer>
+    <div class="game">game<span>&copy;&nbsp;Nataly</span></div>    
+</footer>
 </body>
 </html>

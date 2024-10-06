@@ -1,6 +1,6 @@
 let minValue = document.querySelector('.minValue');
 let maxValue = document.querySelector('.maxValue');
-let answerNumber = Math.floor((minValue.value + maxValue.value) / 2);
+let answerNumber;
 let orderNumber = 1;
 let gameRun = true;
 
@@ -27,33 +27,28 @@ function numberToWord() { // Функция преобразования чис�
         return text;
     }
 
-    if (number > 100){      
-        numberInt = number / 100; //например 119 (1)
-        numberRest = number % 100;
+    if (number >= 100){      
+        numberInt = parseInt(number / 100); //например 119 (1)
+        numberRest = parseInt(number % 100);
         text = hundres[parseInt(numberInt)];
-       // console.log(numberInt);
-       // console.log(numberRest);
     } else {
-        numberRest = number;    
+        numberRest = parseInt(number);    
     }
     
-    if (numberRest > 10) {
-        numberIntTen = numberRest / 10; //например 19 (1)
-        numberRestTen = numberRest % 10;
-       // console.log(numberIntTen);
-       // console.log(numberRestTen);
-    } else {
-        numberRestTen = number;
-    }
-
-    if (parseInt(numberIntTen) == 1)  {
-        text += teens[parseInt(numberRestTen)];
-       return text;
-    } else {
+    if (numberRest >= 10) 
+        {
+        numberIntTen = parseInt(numberRest / 10); //например 19 (1)
+        numberRestTen = parseInt(numberRest % 10);
+            if (parseInt(numberIntTen) == 1)  
+                {
+                text += ' ' + teens[parseInt(numberRestTen)];
+                return text;      
+                } else {
         text += ' ' + tens[parseInt(numberIntTen)];
-       // console.log(parseInt(numberIntTen));
-    }
-    text += ' ' + numbers[parseInt(numberRestTen)];
+        } 
+        } else
+    numberRestTen = parseInt(numberRest);
+    text += ' ' + numbers[parseInt(numberRestTen)]; 
     return text;
 };
 
@@ -142,7 +137,6 @@ document.getElementById('btnOver').addEventListener('click', function (event) { 
             answerPhrase  = `Я считаю, что это число `;
             } 
            answerField.innerText = answerNumber >= 0 ? numberToWord().length < 20 && Math.abs(answerNumber) >= 0 ? `Вы загадали число ${numberToWord()}?` : `Вы загадали число ${answerNumber}?` : numberToWord().length < 20 ? `Вы загадали число минус ${numberToWord()}?` : `Вы загадали число ${answerNumber}?`;
-           console.log(answerNumber);
         }
     }
 })
@@ -153,7 +147,7 @@ document.getElementById('btnLess').addEventListener('click', function (event) { 
         if (parseInt(minValue.value) == parseInt(maxValue.value)) {
             const phraseRandom = Math.round(Math.random() * 3);
             if (phraseRandom === 0) {
-                answerPhrase  = `Вы загадали не правильное число!\n\u{1F914}`;
+                answerPhrase  = `Вы загадали неправильное число!\n\u{1F914}`;
             } else
             if (phraseRandom === 1) {
                 answerPhrase = `Этого не может быть\n\u{1F60E}`;
