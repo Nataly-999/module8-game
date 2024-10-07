@@ -60,8 +60,8 @@ document.querySelector('.gamemplay').addEventListener('click', function(event) {
         [maxValue.value, minValue.value] = [minValue.value, maxValue.value]; // Значения меняются местами если max меньше min.
     }
     if (isNaN(maxValue.value) || isNaN(minValue.value) || maxValue.value == '' || minValue.value == '') {
-        minValue.value = 0;
-        maxValue.value = 100;
+        minValue.value = -999;
+        maxValue.value = 999;
     }
     answerNumber = Math.floor((parseInt(minValue.value) + parseInt(maxValue.value)) / 2);
     orderNumber = 1;
@@ -82,8 +82,8 @@ document.getElementById('btnRetry').addEventListener('click', function () { //О
         [maxValue.value, minValue.value] = [minValue.value, maxValue.value]; // Значения меняются местами если max меньше min.
     }
     if (isNaN(maxValue.value) || isNaN(minValue.value) || maxValue.value == '' || minValue.value == '') {
-        minValue.value = 0;
-        maxValue.value = 100;
+        minValue.value = -999;
+        maxValue.value = 999;
     }
     answerNumber = Math.floor((parseInt(minValue.value) + parseInt(maxValue.value)) / 2);
     orderNumber = 1;
@@ -102,13 +102,13 @@ document.getElementById('btnOver').addEventListener('click', function (event) { 
         if (parseInt(minValue.value) == parseInt(maxValue.value)) {
             const phraseRandom = Math.round(Math.random() * 3);
             if (phraseRandom == 0) {
-                answerPhrase  = `Вы загадали не правильное число!\n\u{1F914}`;
+                answerPhrase  = `Вы загадали неправильное число!\n\u{1F914}`;
             } else
             if (phraseRandom == 1) {
                 answerPhrase = `Этого не может быть\n\u{1F60E}`;
             } else
             if (phraseRandom == 2) {
-                answerPhrase  = `Хмм а может всё таки оно?\n\u{1F620}`;
+                answerPhrase  = `Хмм а может всё-таки оно?\n\u{1F620}`;
             } else
             if (phraseRandom == 3) {
                 answerPhrase  = `Вы меня обманываете?\n\u{1F620}`;
@@ -130,13 +130,13 @@ document.getElementById('btnOver').addEventListener('click', function (event) { 
             if (phraseRandom === 2) {
                 answerPhrase  = `Это число `;
             } else
-            if (phraseRandom === 3) {
+            if (phraseRandom ===3) {
             answerPhrase  = `Скорее всего это число `;
             } else
-            if (phraseRandom === 4) {
+            if (phraseRandom == 4) {
             answerPhrase  = `Я считаю, что это число `;
             } 
-           answerField.innerText = answerNumber >= 0 ? numberToWord().length < 20 && Math.abs(answerNumber) >= 0 ? `Вы загадали число ${numberToWord()}?` : `Вы загадали число ${answerNumber}?` : numberToWord().length < 20 ? `Вы загадали число минус ${numberToWord()}?` : `Вы загадали число ${answerNumber}?`;
+           answerField.innerText = answerNumber >= 0 ? numberToWord().length < 20 && Math.abs(answerNumber) >= 0 ? `${answerPhrase} ${numberToWord()}?` : `${answerPhrase} ${answerNumber}?` : numberToWord().length < 20 ? `${answerPhrase} минус ${numberToWord()}?` : `${answerPhrase} ${answerNumber}?`;
         }
     }
 })
@@ -181,7 +181,7 @@ document.getElementById('btnLess').addEventListener('click', function (event) { 
             if (phraseRandom === 4) {
                 answerPhrase  = `Я считаю, что это число `;
             } 
-            answerField.innerText = answerNumber >= 0 ? numberToWord().length < 20 && Math.abs(answerNumber) >= 0 ? `Вы загадали число ${numberToWord()}?` : `Вы загадали число ${answerNumber}?` : numberToWord().length < 20 ? `Вы загадали число минус ${numberToWord()}?` : `Вы загадали число ${answerNumber}?`; 
+            answerField.innerText = answerNumber >= 0 ? numberToWord().length < 20 && Math.abs(answerNumber) >= 0 ? `${answerPhrase} ${numberToWord()}?` : `${answerPhrase} ${answerNumber}?` : numberToWord().length < 20 ? `${answerPhrase} минус ${numberToWord()}?` : `${answerPhrase} ${answerNumber}?`; 
         }
     }
 })
